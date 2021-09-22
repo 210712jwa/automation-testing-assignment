@@ -8,15 +8,19 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class LogoutDefinition {
-	
-	@When("I click on the signoff button")
-	public void i_click_on_the_signoff_button() {		
-	
+
+	@When("I click the sign-off button")
+	public void i_click_the_sign_off_button() {
+		TestRunner.landingPage.signoffButton().click();
 	}
 
-	@Then("I should see the homepage")
-	public void i_should_see_the_homepage() {
-
+	@Then("I should be back on the homepage")
+	public void i_should_be_back_on_the_homepage() {
+		String currentUrl = TestRunner.driver.getCurrentUrl();
+		
+		String expectedCurrentUrl = "http://demo.guru99.com/test/newtours/index.php";
+		
+		assertEquals(currentUrl, expectedCurrentUrl);
 	}
 	
 }

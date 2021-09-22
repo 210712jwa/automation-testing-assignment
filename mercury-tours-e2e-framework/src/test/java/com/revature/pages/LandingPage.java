@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class LandingPage {
-
+	
 	private WebDriver driver;
 	
 	public LandingPage(WebDriver driver) {
@@ -17,7 +17,7 @@ public class LandingPage {
 	}
 	
 	public WebElement signoffButton() {
-		return this.driver.findElement(By.linkText("SIGN-OFF"));
+		return this.driver.findElement(By.linkText("SIGN-OFF")); // used for a tags
 	}
 	
 }

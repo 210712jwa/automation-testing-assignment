@@ -1,15 +1,17 @@
-Feature: login
+Feature: Login
 
-	Scenario: Unsuccessful Login
-		Given I am at the homepage
-		When I type into the username input with the value "randomusername"
-		And I type into the password input with the value "randompassword"
-		And I click the submit button
-		Then I should see the element for unsuccessful login
-
+	@smoke
 	Scenario: Successful Login
-		Given I am at the homepage
-		When I type into the username input with the value "mercury"
-		And I type into the password input with the value "mercury"
+		Given I am on the homepage
+		When I type into the username input the value "mercury"
+		And I type into the password input the value "mercury"
 		And I click the submit button
-		Then I should see the element for successful login
+		Then I should be on the landing page and see a header with the text "Login Successfully"
+	
+	@smoke
+	Scenario: Unsuccessful Login
+		Given I am on the homepage
+		When I type into the username input the value "abcd123"
+		And I type into the password input the value "abcd123"
+		And I click the submit button
+		Then I should be on the home page and see an element with the text "Enter your userName and password correct"

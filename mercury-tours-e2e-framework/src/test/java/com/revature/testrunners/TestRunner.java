@@ -14,7 +14,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(glue = "com.revature.gluecode", 
 features = { "src/test/java/com/revature/features/login.feature", 
-		"src/test/java/com/revature/features/logout.feature" })
+			 "src/test/java/com/revature/features/logout.feature" })
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 	public static WebDriver driver;
